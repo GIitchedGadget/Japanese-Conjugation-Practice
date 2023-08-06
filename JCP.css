@@ -1,0 +1,265 @@
+h1 {
+    text-align: center;
+    color:whitesmoke;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: rgb(30, 31, 34);
+}
+
+p {
+    color:whitesmoke;
+    font-family: 'Roboto', sans-serif;
+}
+
+.main {
+    position: relative;
+    background-color: rgb(43, 45, 48);
+    width: calc(70vw);
+    text-align: center;
+    border-radius: 20px;
+    height: 490px;
+    /* center div horizontally */
+    margin: 0 auto;
+}
+
+p.stats {
+    line-height: 0px;
+}
+
+p.score {
+    font-size: 25px;
+    line-height: 0px;
+}
+
+.currentStreak {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    width: 100px;
+}
+
+.maxStreak {
+    position: absolute;
+      top: 10px;
+      right: 20px;
+      width: 100px;
+}
+
+.wordBox {
+  position: absolute;
+  left: 50%;
+  top: 30px;
+  transform: translate(-50%);
+}
+
+ruby.word {
+    position: relative;
+    top: 35px;
+    font-size: 50px;
+    text-align: center;
+    line-height: 0;
+    color:whitesmoke;
+    font-family: 'Roboto', sans-serif;
+}
+
+p.definition {
+    position: relative;
+    top: 35px;
+    font-size: 15px;
+    text-align: center;
+    line-height: 0;
+}
+
+p.type {
+    position: relative;
+    top: 40px;
+    text-align: center;
+    line-height: 2;
+}
+
+.targetInflections {
+  position: absolute;
+  left: 50%;
+  top: 105px;
+  transform: translate(-50%);
+  width: 1000px;
+}
+
+p.targetInflections {
+    font-size: 25px;
+    text-align: center;
+    line-height: 0;
+}
+
+.answer {
+  position: absolute;
+  left: 50%;
+  top: 270px;
+  transform: translate(-50%);
+  background-color:#008000;
+  width: calc(40vw);
+  height: 90px;
+  border-radius: 20px;
+}
+
+p.result {
+    position: absolute;
+  left: 50%;
+  top: 0px;
+  transform: translate(-50%);
+    width: 3000px;
+    font-size: 25px;
+    text-align: center;
+    line-height: 0;
+}
+
+p.correct {
+    position: absolute;
+    left: 50%;
+    top: 28px;
+    transform: translate(-50%);
+    width: 1000px;
+    font-size: 25px;
+    text-align: center;
+    line-height: 1;
+}
+
+.textbox {
+  position: absolute;
+  left: 50%;
+  top: 195px;
+  transform: translate(-50%);
+}
+
+input[type="text"] {
+    font-size: 16px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 100px;
+    width: calc(45vw);
+    color: white;
+}
+
+p.bottom {
+  position: absolute;
+  font-size: 15px;
+  left: 50%;
+  top: 225px;
+  transform: translate(-50%);
+  width: 200px;
+}
+
+.options {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 20px;
+    border: 0px;
+    background-color: #555759;
+}
+.options:hover {
+    background-color: #6b6c6e;
+}
+
+.optionsGUI {
+    position: absolute;
+    background-color: rgb(43, 45, 48);
+    top: 20px;
+    width: calc(70vw);
+    text-align: center;
+    border-radius: 20px;
+    height: 760px;
+    z-index: 50;
+}
+
+.optionsMain {
+    display: flex;
+}
+
+p.topText {
+    font-size: 30px;
+    line-height: 0;
+}
+
+.leftLeftOptions {
+    flex: 1;
+    height:250px;
+}
+
+.leftOptions {
+    flex: 1;
+    display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  padding-left: 50px;
+}
+
+.rightOptions {
+    flex: 1;
+}
+
+.rightRightOptions { 
+    flex: 1;
+}
+
+hr {
+    border: none;
+    clear: both;
+    display: block;
+    width: 96%;
+    background-color: #6b6c6e;
+    height: 1px;
+    margin: 10px auto;
+    border-width: 0; /* Add this line to ensure consistent thickness */
+    border-bottom-width: 1px; /* Set the thickness of the bottom border */
+    margin-top: -5px;
+}
+
+input[type="checkbox"] {
+    transform: scale(1.5);
+    line-height: 3;
+    margin-right: 10px;
+    order: 1;
+}
+
+label {
+  display: block;
+  padding-left: 15px;
+  text-indent: -15px;
+  color: whitesmoke;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+label.headerLabel {
+    display: block;
+    padding-left: 15px;
+    text-indent: -15px;
+    color: whitesmoke;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.mainVerbBox {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+}
+
+.verbTypeBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 50px;
+}
