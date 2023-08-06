@@ -104,6 +104,7 @@ function question() {
         document.getElementById("currentStreak").innerHTML = currentStreak;
         document.getElementById("maxStreak").innerHTML = maxStreak;
         document.addEventListener('keyup', reset);
+        document.addEventListener('mouseup', reset);
         userInputValue = null;
       }
       else { //wrong answer
@@ -125,6 +126,7 @@ function question() {
         document.getElementById("currentStreak").innerHTML = currentStreak;
 
         document.addEventListener('keyup', reset);
+        document.addEventListener('mouseup', reset);
         userInputValue = null;
       }
       document.removeEventListener('keyup', answerCheck);
@@ -134,35 +136,34 @@ function question() {
 }
 
 function reset(event) {
-  if (event.key == 'Enter') {
-    textbox.value = '';
-    ConjForms.verbFormal = null;
-    ConjForms.verbCasual = null;
-    ConjForms.verbPresent = null;
-    ConjForms.verbPast = null;
-    ConjForms.verbAffirmative = null;
-    ConjForms.verbNegative = null;
-    specialConjForms.verbて = null;
-    specialConjForms.verbPotential = null;
-    specialConjForms.verbPassive = null;
-    specialConjForms.verbCausative = null;
-    specialConjForms.verbCausativePassive = null;
-    specialConjForms.verbImperative = null;
-    specialConjForms.verbVolitional = null;
-    adjConjForms.adjFormal = null;
-    adjConjForms.adjCasual = null;
-    adjConjForms.adjPresent = null;
-    adjConjForms.adjPast = null;
-    adjConjForms.adjAffirmative = null;
-    adjConjForms.adjNegative = null;
-    adjSpConjForms.adjて = null;
-    adjSpConjForms.adverb = null;
-    adjSpConjForms.nominalized = null;
-    answerBox.style.display = 'none';
-    bottom.style.display = 'none';
-    question();
-  }
+  textbox.value = '';
+  ConjForms.verbFormal = null;
+  ConjForms.verbCasual = null;
+  ConjForms.verbPresent = null;
+  ConjForms.verbPast = null;
+  ConjForms.verbAffirmative = null;
+  ConjForms.verbNegative = null;
+  specialConjForms.verbて = null;
+  specialConjForms.verbPotential = null;
+  specialConjForms.verbPassive = null;
+  specialConjForms.verbCausative = null;
+  specialConjForms.verbCausativePassive = null;
+  specialConjForms.verbImperative = null;
+  specialConjForms.verbVolitional = null;
+  adjConjForms.adjFormal = null;
+  adjConjForms.adjCasual = null;
+  adjConjForms.adjPresent = null;
+  adjConjForms.adjPast = null;
+  adjConjForms.adjAffirmative = null;
+  adjConjForms.adjNegative = null;
+  adjSpConjForms.adjて = null;
+  adjSpConjForms.adverb = null;
+  adjSpConjForms.nominalized = null;
+  answerBox.style.display = 'none';
+  bottom.style.display = 'none';
+  question();
   document.removeEventListener('keyup', reset);
+  document.removeEventListener('mouseup', reset);
 }
 
 function generateConjugation(specialConjForms, ConjForms, spConjPool, ConjPool) {

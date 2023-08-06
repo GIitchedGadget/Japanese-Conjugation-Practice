@@ -140,6 +140,7 @@ input[type="text"] {
     border-radius: 100px;
     width: calc(45vw);
     color: white;
+    background-color: #181B28;
 }
 
 p.bottom {
