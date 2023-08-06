@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>
+           Japanese Conjugation Practice 
+        </title>
+
+        <link rel = "stylesheet" href = "JCP.css">
+    </head>
+    <body>
+        
+
+        <h1 id="title">Japanese Conjugation Practice</h1>
+        
+        <div id="main" class="main">
+
+            <div class="currentStreak">
+                <p class="stats">Streak</p>
+
+                <div class="currentStreakVar">
+                    <p id="currentStreak" class="score"></p>
+                </div>
+
+            </div>
+
+            <div class="maxStreak">
+                <p class="stats">Max Streak</p>
+
+                <div class="maxStreakVar">
+                    <p id="maxStreak" class="score"></p>
+                </div>
+
+            </div>
+
+            <div class="wordBox">
+                <ruby id="word" class="word">する</ruby>
+                <p id="definition" class="definition">to do</p>
+                <p id="type" class="type"></p>
+            </div>
+
+            <div class="targetInflections">
+                <p id="targetInflections" class="targetInflections">praugh</p>
+            </div>
+            
+            <div id="answerBox" class="answer">
+                <p id="result" class="result">Correct</p>
+                <p id="correctAnswer" class="correct">する</p>
+            </div>
+
+            <div class="textbox">
+                <input type="text" id ="textbox" class="textbox">
+                <p id="bottom" class="bottom">Press Enter to continue</p>
+            </div>
+
+            <button class="options" onmouseup="toggleOverlay()">⚙️Options</button>
+            <div id="optionsGUI" class="optionsGUI">
+                <p id="topText" class="topText">Options</p>
+                <div class="optionsMain">
+                    <div class="leftLeftOptions">
+                        <div class="mainVerbBox">
+                            <label class="headerLabel">
+                                <input id="verbsMain" class="headerText" type="checkbox">Verbs</label>
+                            </label>
+                        </div>
+                        <div class="verbTypeBox">
+                            <label class="checkBoxLabel">
+                                <input id="verbIchidan" class="words" type="checkbox">Ichidan verbs</label>
+                                <br>
+                            <label class="checkBoxLabel">
+                                <input id="verbす" class="words" type="checkbox">す - Godan verbs</label>
+                                <br>
+                            <label class="checkBoxLabel">
+                                <input id="verbく" class="words" type="checkbox">く/ぐ - Godan verbs</label>
+                                <br>
+                            <label class="checkBoxLabel">
+                                <input id="verbむ" class="words" type="checkbox">む/ぶ/ぬ - Godan verbs</label>
+                                <br>
+                            <label class="checkBoxLabel">
+                                <input id="verbう" class="words" type="checkbox">う/つ/る - Godan verbs</label>
+                                <br>
+                            <label class="checkBoxLabel">
+                                <input id="verbException" class="words" type="checkbox">Irregular verbs</label>
+                        </div>
+                    </div>
+                    <div class="leftOptions">
+                        <p class="placeholder"></p>
+                        <label class="checkBoxLabel">
+                            <input id="verbPotential" type="checkbox">Potential form</label>
+                            <br>
+                        <label class="checkBoxLabel">
+                            <input id="verbPassive" type="checkbox">Passive form</label>
+                            <br>
+                        <label class="checkBoxLabel">
+                            <input id="verbCausative" type="checkbox">Causative form</label>
+                            <br>
+                        <label class="checkBoxLabel">
+                            <input id="verbCausativePassive"type="checkbox">Causative-passive form</label>
+                            <br>
+                        <label class="checkBoxLabel">
+                            <input id="verbImperative" type="checkbox">Imperative form</label>
+                            <br>
+                        <label class="checkBoxLabel">
+                            <input id="verbVolitional" type="checkbox">Volitional form</label>
+                            <br>
+                        <hr>
+                        <label class="checkBoxLabel">
+                            <input id="verbPresent" class="verbTense" type="checkbox">Present tense</label>
+                            <br>
+                        <label class="checkBoxLabel">
+                            <input id="verbPast" class="verbTense" type="checkbox">Past tense</label>
+                            <br>
+                        <label class="checkBoxLabel">
+                            <input id="verbて" class="verbTense" type="checkbox">て-form</label>
+                            <br>
+                        <hr>
+                        <label class="checkBoxLabel">
+                            <input id="verbAffirmative" class="verbAffOrNeg" type="checkbox">Affirmative</label>
+                            <br>
+                        <label class="checkBoxLabel">
+                            <input id="verbNegative" class="verbAffOrNeg" type="checkbox">Negative</label>
+                            <br>
+                        <hr>
+                        <label class="checkBoxLabel">
+                            <input id="verbCasual" class="verbFormality" type="checkbox">Casual</label>
+                            <br>
+                        <label class="checkBoxLabel">
+                            <input id="verbFormal" class="verbFormality" type="checkbox">Formal</label>
+                            <br>
+                    </div>
+                    <div class="rightOptions">
+                        <div class="mainVerbBox">
+                            <label class="headerLabel">
+                                <input id="adjMain" class="adjMain" type="checkbox">Adjectives</label>
+                            </label>
+                            <div class="verbTypeBox">
+                                <label class="checkBoxLabel">
+                                    <input id="adjい" type="checkbox">い-adjectives</label>
+                                    <br>
+                                <label class="checkBoxLabel">
+                                    <input id="adjな" type="checkbox">な-adjectives</label>
+                                    <br>
+                                <label class="checkBoxLabel">
+                                    <input id="adjException" type="checkbox">Irregular adjectives</label>
+                                    <br>
+                                    <hr>
+                                <label class="checkBoxLabel">
+                                    <input id="adjPresent" type="checkbox">Present tense</label>
+                                    <br>
+                                <label class="checkBoxLabel">
+                                    <input id="adjPast" type="checkbox">Past tense</label>
+                                    <br>
+                                <label class="checkBoxLabel">
+                                    <input id="adjて" type="checkbox">て-form</label>
+                                    <br>
+                                <label class="checkBoxLabel">
+                                    <input id="adverb" type="checkbox">Adverb</label>
+                                    <br>
+                                <label class="checkBoxLabel">
+                                    <input id="nominalized" type="checkbox">Nominalized</label>
+                                    <br>
+                                    <hr>
+                                <label class="checkBoxLabel">
+                                    <input id="adjAffirmative" type="checkbox">Affirmative</label>
+                                    <br>
+                                <label class="checkBoxLabel">
+                                    <input id="adjNegative" type="checkbox">Negative</label>
+                                    <br>
+                                    <hr>
+                                <label class="checkBoxLabel">
+                                    <input id="adjCasual" type="checkbox">Casual</label>
+                                    <br>
+                                <label class="checkBoxLabel">
+                                    <input id="adjFormal" type="checkbox">Formal</label>
+                                    <br>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rightRightOptions">
+                        <p class="placeholder"></p>
+                        <br>
+                        <label class="checkBoxLabel">
+                            <input id="furigana" type="checkbox">Show furigana</label>
+                            <br>
+                        <label class="checkBoxLabel">
+                            <input id="streaks" type="checkbox">Show streaks</label>
+                            <br>
+                    </div>
+                    <button id="options" class="options" onmouseup="toggleOverlay()">Back ↩</button>
+                </div>
+            </div>
+
+            
+            
+        </div>
+        <script type="module" src = "JCP.js"></script>
+        <script>
+            const optionsGUI = document.getElementById('optionsGUI');
+            const main = document.getElementById('main');
+            function toggleOverlay() {
+                if (optionsGUI.style.display == '') {
+                    optionsGUI.style.display = 'none';
+                }
+                else {
+                    optionsGUI.style.display = '';
+                }
+            }
+        </script>
+    </body>
+</html>
