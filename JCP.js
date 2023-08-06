@@ -23,10 +23,6 @@ const bottom = document.getElementById('bottom');
 const optionsGUI = document.getElementById('optionsGUI');
 const textbox = document.getElementById('textbox');
 
-let currentStreak = 0;
-let maxStreak = 0;
-document.getElementById("currentStreak").innerHTML = currentStreak;
-document.getElementById("maxStreak").innerHTML = maxStreak;
 answerBox.style.display = 'none';
 bottom.style.display = 'none';
 optionsGUI.style.display = 'none';
@@ -96,13 +92,7 @@ function question() {
         answerBox.style.backgroundColor = '#008000';
         document.getElementById("result").innerHTML = "Correct";
         document.getElementById("correctAnswer").innerHTML = answer + " ○";
-
         currentStreak++; //streak
-        if (currentStreak > maxStreak) {
-          maxStreak = currentStreak;
-        }
-        document.getElementById("currentStreak").innerHTML = currentStreak;
-        document.getElementById("maxStreak").innerHTML = maxStreak;
         document.addEventListener('keyup', reset);
         document.addEventListener('mouseup', reset);
         userInputValue = null;
@@ -121,10 +111,6 @@ function question() {
           document.getElementById("result").innerHTML = userInputValue + " ×";
         }
         document.getElementById("correctAnswer").innerHTML = answer + " ○";
-
-        currentStreak = 0; //streak
-        document.getElementById("currentStreak").innerHTML = currentStreak;
-
         document.addEventListener('keyup', reset);
         document.addEventListener('mouseup', reset);
         userInputValue = null;
@@ -2076,7 +2062,6 @@ const adjCasual = document.getElementById("adjCasual");
 const adjFormal = document.getElementById("adjFormal");
 const nominalized = document.getElementById("nominalized");
 const furigana = document.getElementById("furigana");
-const streaks = document.getElementById("streaks");
 
 const checkboxes = document.querySelectorAll('input[type="checkbox"]'); //check every checkbox
 checkboxes.forEach(checkbox => {
@@ -2358,43 +2343,44 @@ function adjMainChecked() {
   }
 }
 
-verbIchidan.addEventListener('click', () => {wordList(event.target)});
-verbす.addEventListener('click', () => {wordList(event.target)});
-verbく.addEventListener('click', () => {wordList(event.target)});
-verbむ.addEventListener('click', () => {wordList(event.target)});
-verbう.addEventListener('click', () => {wordList(event.target)});
-verbException.addEventListener('click', () => {wordList(event.target)});
-verbPotential.addEventListener('click', () => {specialList(event.target)});
-verbPassive.addEventListener('click', () => {specialList(event.target)});
-verbCausative.addEventListener('click', () => {specialList(event.target)});
-verbCausativePassive.addEventListener('click', () => {specialList(event.target)});
-verbImperative.addEventListener('click', () => {specialList(event.target)});
-verbVolitional.addEventListener('click', () => {specialList(event.target)});
-verbPresent.addEventListener('click', () => {conjList(event.target)});
-verbPast.addEventListener('click', () => {conjList(event.target)});
-verbて.addEventListener('click', () => {specialList(event.target)});
-verbAffirmative.addEventListener('click', () => {conjList(event.target)});
-verbNegative.addEventListener('click', () => {conjList(event.target)});
-verbCasual.addEventListener('click', () => {conjList(event.target)});
-verbFormal.addEventListener('click', () => {conjList(event.target)});
+verbIchidan.addEventListener('mouseup', () => {wordList(event.target)});
+verbす.addEventListener('mouseup', () => {wordList(event.target)});
+verbく.addEventListener('mouseup', () => {wordList(event.target)});
+verbむ.addEventListener('mouseup', () => {wordList(event.target)});
+verbう.addEventListener('mouseup', () => {wordList(event.target)});
+verbException.addEventListener('mouseup', () => {wordList(event.target)});
+verbPotential.addEventListener('mouseup', () => {specialList(event.target)});
+verbPassive.addEventListener('mouseup', () => {specialList(event.target)});
+verbCausative.addEventListener('mouseup', () => {specialList(event.target)});
+verbCausativePassive.addEventListener('mouseup', () => {specialList(event.target)});
+verbImperative.addEventListener('mouseup', () => {specialList(event.target)});
+verbVolitional.addEventListener('mouseup', () => {specialList(event.target)});
+verbPresent.addEventListener('mouseup', () => {conjList(event.target)});
+verbPast.addEventListener('mouseup', () => {conjList(event.target)});
+verbて.addEventListener('mouseup', () => {specialList(event.target)});
+verbAffirmative.addEventListener('mouseup', () => {conjList(event.target)});
+verbNegative.addEventListener('mouseup', () => {conjList(event.target)});
+verbCasual.addEventListener('mouseup', () => {conjList(event.target)});
+verbFormal.addEventListener('mouseup', () => {conjList(event.target)});
 
-adjい.addEventListener('click', () => {wordList(event.target)});
-adjな.addEventListener('click', () => {wordList(event.target)});
-adjException.addEventListener('click', () => {wordList(event.target)});
-adjPresent.addEventListener('click', () => {adjConjList(event.target)});
-adjPast.addEventListener('click', () => {adjConjList(event.target)});
-adjて.addEventListener('click', () => {adjSpList(event.target)});
-adverb.addEventListener('click', () => {adjSpList(event.target)});
-adjAffirmative.addEventListener('click', () => {adjConjList(event.target)});
-adjNegative.addEventListener('click', () => {adjConjList(event.target)});
-adjCasual.addEventListener('click', () => {adjConjList(event.target)});
-adjFormal.addEventListener('click', () => {adjConjList(event.target)});
-nominalized.addEventListener('click', () => {adjSpList(event.target)});
+adjい.addEventListener('mouseup', () => {wordList(event.target)});
+adjな.addEventListener('mouseup', () => {wordList(event.target)});
+adjException.addEventListener('mouseup', () => {wordList(event.target)});
+adjPresent.addEventListener('mouseup', () => {adjConjList(event.target)});
+adjPast.addEventListener('mouseup', () => {adjConjList(event.target)});
+adjて.addEventListener('mouseup', () => {adjSpList(event.target)});
+adverb.addEventListener('mouseup', () => {adjSpList(event.target)});
+adjAffirmative.addEventListener('mouseup', () => {adjConjList(event.target)});
+adjNegative.addEventListener('mouseup', () => {adjConjList(event.target)});
+adjCasual.addEventListener('mouseup', () => {adjConjList(event.target)});
+adjFormal.addEventListener('mouseup', () => {adjConjList(event.target)});
+nominalized.addEventListener('mouseup', () => {adjSpList(event.target)});
 
-verbsMain.addEventListener('click', () => {verbsMainChecked()});
-adjMain.addEventListener('click', () => {adjMainChecked()});
+verbsMain.addEventListener('mouseup', () => {verbsMainChecked()});
+adjMain.addEventListener('mouseup', () => {adjMainChecked()});
 
-furigana.addEventListener('click', () => {manageFurigana(event.target)});
+furigana.addEventListener('mouseup', () => {manageFurigana(event.target)});
+streaks.addEventListener('mouseup', ()=> {manageStreaks(event.target)});
 
 function manageFurigana(element) {
   const furiganaElements = document.querySelectorAll('rt');
@@ -2408,5 +2394,4 @@ function manageFurigana(element) {
       element.style.display = 'none';
     });
   }
-  
 }
