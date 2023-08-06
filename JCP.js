@@ -17,7 +17,7 @@ import {adjAffOrNeg} from "./words.js";
 import {verbFormality} from "./words.js";
 import {adjFormality} from "./words.js";
 import {romajiToHiraganaMap} from "./characterList.js";
-//a
+
 const answerBox = document.getElementById('answerBox');
 const bottom = document.getElementById('bottom');
 const optionsGUI = document.getElementById('optionsGUI');
@@ -92,7 +92,6 @@ function question() {
         answerBox.style.backgroundColor = '#008000';
         document.getElementById("result").innerHTML = "Correct";
         document.getElementById("correctAnswer").innerHTML = answer + " ○";
-        currentStreak++; //streak
         document.addEventListener('keyup', reset);
         document.addEventListener('mouseup', reset);
         userInputValue = null;
@@ -2380,7 +2379,6 @@ verbsMain.addEventListener('mouseup', () => {verbsMainChecked()});
 adjMain.addEventListener('mouseup', () => {adjMainChecked()});
 
 furigana.addEventListener('mouseup', () => {manageFurigana(event.target)});
-streaks.addEventListener('mouseup', ()=> {manageStreaks(event.target)});
 
 function manageFurigana(element) {
   const furiganaElements = document.querySelectorAll('rt');
