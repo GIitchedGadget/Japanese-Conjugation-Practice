@@ -17,7 +17,7 @@ import {adjAffOrNeg} from "./words.js";
 import {verbFormality} from "./words.js";
 import {adjFormality} from "./words.js";
 import {romajiToHiraganaMap} from "./characterList.js";
-
+//hi
 const answerBox = document.getElementById('answerBox');
 const bottom = document.getElementById('bottom');
 const optionsGUI = document.getElementById('optionsGUI');
